@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import CoinItem from "./components/CoinItem";
 
 function App() {
   const [data, setData] = useState<any>([]);
@@ -21,15 +22,13 @@ function App() {
       )
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
       });
   }
   return (
-    <div className="App">
-      <div className="text-5xl">
-        <h1>TO JE H1</h1>
-        <h2>TO JE H2</h2>
-      </div>
+    <div>
+      {data.map((coinData: any) => {
+        return <CoinItem data={coinData} key={coinData.id} />;
+      })}
     </div>
   );
 }
