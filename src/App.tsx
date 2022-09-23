@@ -1,7 +1,6 @@
-import React from "react";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import CoinItem from "./components/CoinItem";
+import React, { useEffect, useState } from "react";
+import Layout from "./components/Layout";
 
 function App() {
   const [data, setData] = useState<any>([]);
@@ -25,10 +24,8 @@ function App() {
       });
   }
   return (
-    <div className="bg-slate-800">
-      {data.map((coinData: any) => {
-        return <CoinItem data={coinData} key={coinData.id} />;
-      })}
+    <div className="bg-gray-900">
+      <Layout data={data} />
     </div>
   );
 }
