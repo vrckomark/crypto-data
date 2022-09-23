@@ -25,7 +25,7 @@ function App() {
       });
   }
   return (
-    <div>
+    <div className="bg-slate-800">
       {data.map((coinData: any) => {
         return <CoinItem data={coinData} key={coinData.id} />;
       })}
