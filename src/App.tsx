@@ -24,7 +24,7 @@ function App() {
       });
   }
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 font-primary">
       <Layout data={data} />
     </div>
   );
