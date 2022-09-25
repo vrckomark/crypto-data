@@ -7,6 +7,13 @@ function App() {
 
   useEffect(() => {
     getData();
+    const interval = setInterval(() => {
+      console.log("fetched data");
+
+      getData();
+    }, 60000);
+
+    return () => clearInterval(interval);
   }, []);
 
   async function getData() {
