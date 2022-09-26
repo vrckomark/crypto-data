@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CoinItem from "./CoinItem";
 import logo from "../gecko-logo.svg";
 import Select from "react-select";
+import Dropdown from "./Dropdown";
 
 export default function Layout({ data }) {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -11,10 +12,6 @@ export default function Layout({ data }) {
     { value: "market_cap", label: "Market Cap" },
     { value: "current_price", label: "Current Price" },
   ];
-
-  const _handleChange = (e) => {
-    setSelectedOption(e);
-  };
 
   useEffect(() => {
     if (selectedOption?.value === "price_change_percentage_24h") {
@@ -56,11 +53,12 @@ export default function Layout({ data }) {
       <main className="py-8">
         {data && (
           <>
-            <div className="w-full flex justify-end pr-10">
+            <div className="w-full flex justify-end pr-6 mb-4">
               <Select
+                className="w-1/4 "
                 options={options}
-                onChange={_handleChange}
-                className="w-1/4 bg-slate-800 ml-10 mb-4"
+                onChange={setSelectedOption}
+                value={selectedOption}
               />
             </div>
 
