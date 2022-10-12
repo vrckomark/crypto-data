@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import CoinItem from "./CoinItem";
 import logo from "../gecko-logo.svg";
 import Select from "react-select";
-import Dropdown from "./Dropdown";
 
 export default function Layout({ data }) {
   const [selectedOption, setSelectedOption] = useState(null);
